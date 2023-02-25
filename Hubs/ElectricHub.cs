@@ -14,7 +14,7 @@ namespace Secim_Api.Hubs
 
         public async Task GetElectricConsumeList()
         {
-            await Clients.All.SendAsync("ReceiveElectricList", "Elektrik Verilerini Al");
+            await Clients.All.SendAsync("ReceiveElectricList", _electricService.GetElectricChartsList());
         }
     }
 }

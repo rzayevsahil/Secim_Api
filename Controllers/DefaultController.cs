@@ -23,8 +23,8 @@ namespace Secim_Api.Controllers
         public async Task<IActionResult> SaveElectric(Electric electric)
         {
             await _electricService.SaveElectric(electric);
-            IQueryable<Electric> electricList = _electricService.GetList();
-            return Ok(electricList);
+            //IQueryable<Electric> electricList = _electricService.GetList();
+            return Ok(_electricService.GetElectricChartsList());
         }
 
         [HttpGet]
